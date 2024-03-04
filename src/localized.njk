@@ -1,0 +1,23 @@
+---
+title: Latest News
+layout: base.njk # specifies the main template (in the _includes folder)
+pagination:
+    data: news # data says where 11ty get the data from (news.js file)
+    size: 1
+    alias: news # the alias makes it easier to point to the property to set
+permalink: /{{ news.country }}/index.html # permalink defines the link structure
+---
+
+<div class="container">
+    <h1>This is a page for you</h1>
+    <div class="vibe">Have you heard the latest news?</div>
+    <div class="love">
+        <h3>Latest News</h3>
+        <ul>
+        {% for article in news.articles %}
+            <li><h2><a href={{article.url}}>{{article.title}}</a></h2><p>{{article.author}}, {{article.publishedAt}}</p></li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+<script src="./js/vibe.js"></script>
