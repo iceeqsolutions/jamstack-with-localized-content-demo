@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div.container {
+            width: 400px;
+            margin: 0 auto;
+        }
+       
+        .menu {
+            margin: 0 10px;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <a class="menu" href="/">Home</a><a href="/about">About</a>
+    {{ content | safe }}
+    {# "safe" stops Nunjacks from escaping HTML #}
+</body>
+</html>
